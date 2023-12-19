@@ -10,11 +10,11 @@ Interbanc Pay offers seamless payment integrations for your apps.
 
 When building payment into your app, below is a general way of interacting with Interbanc Pay API:
 
-1. On your checkout page or from your server, initiate a payment by calling the initiate (Payment Intent Endpoint)[/api-reference/pay/endpoints/payment-intent/create]. The Payment Intent Endpoint will return a (response) [/api-reference/pay/endpoints/payment-intent/get] containing a Payment Link with which you can redirect your customers to for them to complete the payment.
+1. On your checkout page or from your server, initiate a payment by calling the initiate (Payment Intent Endpoint)[/api-reference/endpoints/payment-intent/create]. The Payment Intent Endpoint will return a (response) [/api-reference/endpoints/payment-intent/get] containing a Payment Link with which you can redirect your customers to for them to complete the payment.
 
-2. Verify the payment. You must confirm the payment was successful by using the (Verify Payment Endpoint)[/api-reference/pay/endpoints/payment-intent/verify].
+2. Verify the payment. You must confirm the payment was successful by using the (Verify Payment Endpoint)[/api-reference/endpoints/payment-intent/verify].
 
-3. Confirm the payment details before giving value to your customer. The (Payment Verification Endpoint)[/api-reference/pay/endpoints/payment-intent/verify] will return full details about the payment. Confirm key details (status, amount, currency) from the endpoint before giving value to your customer.
+3. Confirm the payment details before giving value to your customer. The (Payment Verification Endpoint)[/api-reference/endpoints/payment-intent/verify] will return full details about the payment. Confirm key details (status, amount, currency) from the endpoint before giving value to your customer.
 
 That's it!
 
@@ -23,13 +23,13 @@ That's it!
 
 Payment pages allow you to receive fixed amount payments from multiple customers. Here is how to use payment pages:
 
-1. Create a payment page. You can either create a payment page from (your Dashboard)[https://app.interbanc.africa] or use the (Create Payment Page Endpoint)[/api-reference/pay/endpoints/payment-page/create].
+1. Create a payment page. You can either create a payment page from (your Dashboard)[https://app.interbanc.africa] or use the (Create Payment Page Endpoint)[/api-reference/endpoints/payment-page/create].
 
-2. Share your Page Link. If you're using the (Create Payment Page Endpoint)[/api-reference/pay/endpoints/payment-page/create], redirect your customer to the page link that will be returned from the endpoint. Alternately, if you're using the (Dashboard)[https://app.interbanc.africa], copy the link and include this on your website or share directly with your customers. The customer then completes the payment.
+2. Share your Page Link. If you're using the (Create Payment Page Endpoint)[/api-reference/endpoints/payment-page/create], redirect your customer to the page link that will be returned from the endpoint. Alternately, if you're using the (Dashboard)[https://app.interbanc.africa], copy the link and include this on your website or share directly with your customers. The customer then completes the payment.
 
-3. Verify the payment. If you're using the (Create Payment Page Endpoint)[/api-reference/pay/endpoints/payment-page/create], you can (verify the payment)[/api-reference/pay/endpoints/payment-intent/verify] using the Payment Reference that was returned via the call back URL or by listening to (Payment Page Webhook Events)[/api-reference/pay/endpoints/webhooks/payment-page]
+3. Verify the payment. If you're using the (Create Payment Page Endpoint)[/api-reference/endpoints/payment-page/create], you can (verify the payment)[/api-reference/endpoints/payment-intent/verify] using the Payment Reference that was returned via the call back URL or by listening to (Payment Page Webhook Events)[/api-reference/endpoints/webhooks/payment-page]
 
-4. Confirm the payment details before giving value to your customer. The (Payment Verification Endpoint)[/api-reference/pay/endpoints/payment-intent/verify] will return full details about the payment. Confirm key details (status, amount, currency) from the endpoint before giving value to your customer.
+4. Confirm the payment details before giving value to your customer. The (Payment Verification Endpoint)[/api-reference/endpoints/payment-intent/verify] will return full details about the payment. Confirm key details (status, amount, currency) from the endpoint before giving value to your customer.
 
 
 ### When can you use Payment Pages?

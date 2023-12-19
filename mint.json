@@ -45,7 +45,7 @@
     },
     {
       "group": "Products",
-      "pages": ["products/pay", "products/bills"]
+      "pages": ["products/pay/pay", "products/bills"]
     },
     {
       "group": "API Documentation",

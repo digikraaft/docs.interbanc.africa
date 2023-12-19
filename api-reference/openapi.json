@@ -1,8 +1,8 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "OpenAPI Plant Store",
-    "description": "A sample API that uses a plant store as an example to demonstrate features in the OpenAPI specification",
+    "title": "Interbanc API specification",
+    "description": "Interbanc API reference",
     "license": {
       "name": "MIT"
     },
@@ -10,7 +10,7 @@
   },
   "servers": [
     {
-      "url": "http://sandbox.mintlify.com"
+      "url": "https://dev.pay.interbanc.africa/api/v2"
     }
   ],
   "security": [
@@ -19,35 +19,24 @@
     }
   ],
   "paths": {
-    "/plants": {
+    "/payment-pages": {
       "get": {
-        "description": "Returns all plants from the system that the user has access to",
-        "parameters": [
-          {
-            "name": "limit",
-            "in": "query",
-            "description": "The maximum number of results to return",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
+        "description": "Returns all payment pages that belongs to an App",
         "responses": {
           "200": {
-            "description": "Plant response",
+            "description": "Payment Page response",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Plant"
+                    "$ref": "#/components/schemas/PaymentPage"
                   }
                 }
               }
             }
           },
-          "400": {
+          "300": {
             "description": "Unexpected error",
             "content": {
               "application/json": {
@@ -60,13 +49,13 @@
         }
       },
       "post": {
-        "description": "Creates a new plant in the store",
+        "description": "Creates a new Payment Page",
         "requestBody": {
-          "description": "Plant to add to the store",
+          "description": "Payment Page to be created",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPlant"
+                "$ref": "#/components/schemas/NewPaymentPage"
               }
             }
           },
@@ -74,16 +63,16 @@
         },
         "responses": {
           "200": {
-            "description": "plant response",
+            "description": "Payment Page response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Plant"
+                  "$ref": "#/components/schemas/PaymentPage"
                 }
               }
             }
           },
-          "400": {
+          "300": {
             "description": "unexpected error",
             "content": {
               "application/json": {
@@ -96,14 +85,50 @@
         }
       }
     },
-    "/plants/{id}": {
-      "delete": {
-        "description": "Deletes a single plant based on the ID supplied",
+    "/payment-pages/{id}": {
+      "get": {
+        "description": "Returns details of a Payment Page",
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "ID of plant to delete",
+            "description": "The ID of Payment Page to fetch. The ID would usually start with pg_",
+            "required": true,
+            "schema": {
+              "type": "string",
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Payment Page details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaymentPage"
+                }
+              }
+            }
+          },
+          "300": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "description": "Deletes a Payment Page based on the ID supplied.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The ID of Payment Page to delete. The ID would usually start with pg_",
             "required": true,
             "schema": {
               "type": "integer",
@@ -113,10 +138,10 @@
         ],
         "responses": {
           "204": {
-            "description": "Plant deleted",
+            "description": "Payment page deleted.",
             "content": {}
           },
-          "400": {
+          "300": {
             "description": "unexpected error",
             "content": {
               "application/json": {
@@ -132,52 +157,77 @@
   },
   "components": {
     "schemas": {
-      "Plant": {
+      "PaymentPage": {
         "required": [
-          "name"
+          "name",
+          "amount",
+          "currency"
         ],
         "type": "object",
         "properties": {
           "name": {
-            "description": "The name of the plant",
+            "description": "The name of the payment page.",
             "type": "string"
           },
-          "tag": {
-            "description": "Tag to specify the type",
+          "amount": {
+            "description": "Amount to charge customer.",
+            "type": "integer"
+          },
+          "currency": {
+            "description": "The currency of the amount. The only currency currently supported is NGN.",
             "type": "string"
+          },
+          "slug": {
+            "description": "The preferred page URL. If none is provided, it generates a slug based on the name.",
+            "type": "string"
+          },
+          "paymentMethod": {
+            "description": "The allowed payment methods to be used for payment. Possible values include: Flutterwave.",
+            "type": "array"
+          },
+          "callbackUrl": {
+            "description": "The URL to redirect user to after a payment attempt.",
+            "type": "string"
+          },
+          "activeAt": {
+            "description": "The date and time the payment page should become active. If not provided, the payment page is immediately active.",
+            "type": "string"
+          },
+          "expiresAt": {
+            "description": "The date and time the payment page should expire. If not provided, the payment page will never expire.",
+            "type": "string"
+          },
+          "settlementAccountId": {
+            "description": "The Settlement Account ID that payments received should go into. If no value is specified, the default business settlement account is used.",
+            "type": "string"
+          },
+          "additionalFields": {
+            "description": "If you want users to provide additional information before making payment, specify them here. If none is specified, the defaults (First name, Last name, Email, Phone number) are used.",
+            "type": "array"
           }
         }
       },
-      "NewPlant": {
+      "NewPaymentPage": {
         "allOf": [
           {
-            "$ref": "#/components/schemas/Plant"
-          },
-          {
-            "required": [
-              "id"
-            ],
-            "type": "object",
-            "properties": {
-              "id": {
-                "description": "Identification number of the plant",
-                "type": "integer",
-                "format": "int64"
-              }
-            }
+            "$ref": "#/components/schemas/PaymentPage"
           }
         ]
       },
       "Error": {
         "required": [
-          "error",
+          "status",
+          "title",
           "message"
         ],
         "type": "object",
         "properties": {
-          "error": {
+          "status": {
             "type": "integer",
             "format": "int32"
+          },
+          "title": {
+            "type": "string"
           },
           "message": {
             "type": "string"

@@ -52,11 +52,20 @@
       "pages": ["api-reference/introduction"]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "Endpoints",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
+        {
+          "group": "Payment Pages",
+          "pages": [
+            "api-reference/endpoints/payment-page/create"
+          ]
+        },
+        {
+          "group": "Payment Intent",
+          "pages": [
+            "api-reference/endpoints/payment-intent/create"
+          ]
+        }
       ]
     }
   ],
@@ -64,5 +73,11 @@
     "twitter": "https://twitter.com/digikraaft",
     "github": "https://github.com/digikraaft",
     "linkedin": "https://www.linkedin.com/company/digikraaft"
+  },
+  "api": {
+    "baseUrl": "https://dev.pay.interbanc.africa/api",
+    "auth": {
+      "method": "bearer"
+    }
   }
 }

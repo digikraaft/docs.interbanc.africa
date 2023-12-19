@@ -95,7 +95,7 @@
             "description": "The ID of Payment Page to fetch. The ID would usually start with pg_",
             "required": true,
             "schema": {
-              "type": "string",
+              "type": "string"
             }
           }
         ],

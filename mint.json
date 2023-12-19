@@ -23,7 +23,7 @@
   ],
   "topbarCtaButton": {
     "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "url": "https://app.interbanc.africa"
   },
   "tabs": [
     {
@@ -41,11 +41,11 @@
   "navigation": [
     {
       "group": "Get Started",
-      "pages": ["introduction", "quickstart", "development"]
+      "pages": ["introduction", "starthere"]
     },
     {
-      "group": "Essentials",
-      "pages": ["essentials/markdown", "essentials/code", "essentials/images", "essentials/settings", "essentials/navigation"]
+      "group": "Products",
+      "pages": ["products/interbanc-pay", "products/interbanc-bills"]
     },
     {
       "group": "API Documentation",
@@ -61,8 +61,8 @@
     }
   ],
   "footerSocials": {
-    "twitter": "https://twitter.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+    "twitter": "https://twitter.com/digikraaft",
+    "github": "https://github.com/digikraaft",
+    "linkedin": "https://www.linkedin.com/company/digikraaft"
   }
 }

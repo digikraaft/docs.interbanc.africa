@@ -86,11 +86,13 @@ api: 'POST /v2/payment-pages'
       Type of the payment method
     </ResponseField>
 
-    <Expandable title="attributes" type="array">
-        <ResponseField name="name" type="string">
-          Name of the payment method
-        </ResponseField>
-    </Expandable>
+    <ResponseField name="attributes" type="array">
+        <Expandable title="properties" type="array">
+            <ResponseField name="name" type="string">
+              Name of the payment method
+            </ResponseField>
+        </Expandable>
+    </ResponseField>
 
   </Expandable>
 </ResponseField>

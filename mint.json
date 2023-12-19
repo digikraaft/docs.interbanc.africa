@@ -57,13 +57,20 @@
         {
           "group": "Payment Pages",
           "pages": [
-            "api-reference/endpoints/payment-page/create"
+            "api-reference/endpoints/payment-page/create",
+            "api-reference/endpoints/payment-page/get",
+            "api-reference/endpoints/payment-page/list",
+            "api-reference/endpoints/payment-page/delete"
           ]
         },
         {
           "group": "Payment Intent",
           "pages": [
-            "api-reference/endpoints/payment-intent/create"
+            "api-reference/endpoints/payment-intent/create",
+            "api-reference/endpoints/payment-intent/get",
+            "api-reference/endpoints/payment-intent/list",
+            "api-reference/endpoints/payment-intent/verify",
+            "api-reference/endpoints/payment-intent/delete"
           ]
         }
       ]

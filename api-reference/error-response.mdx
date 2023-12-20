@@ -12,16 +12,20 @@ description: 'Interbanc API error responses'
 ### Unsuccessful Request Error Response
 
 ```json
-"status": "300"
-"title": "Error processing request"
-"data": "Custom message, depending on the endpoint"
+{
+    "status": "300",
+    "title": "Error processing request",
+    "data": "Custom message, depending on the endpoint"
+}
 ```
 
 ### Failed Validation Error Response
 
 ```json
-"status": "422"
-"title": "Post request error"
-"detail": "The request cannot be processed. There were some validation errors."
-"errors": "Custom error messages, depending on the endpoint"
+{
+    "status": "422",
+    "title": "Post request error",
+    "detail": "The request cannot be processed. There were some validation errors.",
+    "errors": "Custom error messages, depending on the endpoint"
+}
 ```

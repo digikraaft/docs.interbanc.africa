@@ -2,3 +2,42 @@
 title: 'Verify Payment Intent'
 openapi: 'POST /v2/payment-intents/verify-transaction'
 ---
+
+## Request Body Parameters
+
+The body parameter can be either of the following:
+
+<ParamField body="clientReference" type="string">
+  Reference of the Payment Intent that was supplied by the client.
+</ParamField>
+
+<ParamField body="transactionReference" type="string">
+  Transaction Reference of the Payment Intent.
+</ParamField>
+
+## Response Data
+
+<ResponseField name="status" type="int" required>
+  The status of the response
+</ResponseField>
+
+<ResponseField name="title" type="string" required>
+  The title of the response
+</ResponseField>
+
+<ResponseField name="data" type="array" required>
+  <Expandable title="properties">
+    <ResponseField name="status" type="int" required>
+      The status of the payment Intent. This is the status to checkout for. Possible values include: initiated, processing, requires_payment_method, succeeded, canceled, failed
+    </ResponseField>
+    <ResponseField name="detail" type="int" required>
+       Detailed description of the Payment Intent status
+    </ResponseField>
+    <ResponseField name="clientReference" type="string" required>
+       The unique reference supplied by the client
+    </ResponseField>
+    <ResponseField name="transactionReference" type="string" required>
+      The Payment Intent transaction reference
+    </ResponseField>
+  </Expandable>
+</ResponseField>

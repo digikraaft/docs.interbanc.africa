@@ -1,0 +1,27 @@
+---
+title: 'Error Responses'
+description: 'Interbanc API error responses'
+---
+
+<Note>
+ Please note that all endpoints have similar error responses. Any endpoint that doesn't follow the pattern shown on this page will contain the error response on it's own page.
+</Note>
+
+## Error Response Format
+
+### Unsuccessful Request Error Response
+
+```json
+"status": "300"
+"title": "Error processing request"
+"data": "Custom message, depending on the endpoint"
+```
+
+### Failed Validation Error Response
+
+```json
+"status": "422"
+"title": "Post request error"
+"detail": "The request cannot be processed. There were some validation errors."
+"errors": "Custom error messages, depending on the endpoint"
+```

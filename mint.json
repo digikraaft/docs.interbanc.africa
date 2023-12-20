@@ -49,7 +49,7 @@
     },
     {
       "group": "API Documentation",
-      "pages": ["api-reference/introduction"]
+      "pages": ["api-reference/introduction", "api-reference/error-response"]
     },
     {
       "group": "Endpoints",
@@ -60,6 +60,7 @@
             "api-reference/endpoints/payment-page/create",
             "api-reference/endpoints/payment-page/get",
             "api-reference/endpoints/payment-page/list",
+            "api-reference/endpoints/payment-page/update",
             "api-reference/endpoints/payment-page/delete"
           ]
         },
@@ -70,6 +71,7 @@
             "api-reference/endpoints/payment-intent/get",
             "api-reference/endpoints/payment-intent/list",
             "api-reference/endpoints/payment-intent/verify",
+            "api-reference/endpoints/payment-intent/update",
             "api-reference/endpoints/payment-intent/delete"
           ]
         }

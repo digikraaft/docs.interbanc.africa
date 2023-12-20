@@ -1,13 +1,13 @@
 ---
-title: 'Update Payment Page'
-openapi: 'UPDATE /v2/payment-pages/{id}'
+title: 'Update Payment Intent'
+openapi: 'UPDATE /v2/payment-intents/{id}'
 ---
+
 ## Request Body Parameters
 
-<ParamField path="id" type="string" placeholder="pg_test_page_id" required>
-  The ID of the Payment Page.
+<ParamField path="id" type="string" placeholder="pi_aedf123ddslflgnalkihb" required>
+  The ID of the Payment Intent.
 </ParamField>
-
 
 ## Response Data
 
@@ -19,24 +19,36 @@ openapi: 'UPDATE /v2/payment-pages/{id}'
   Amount
 </ResponseField>
 
+<ResponseField name="totalAmount" type="string" required>
+  Total Amount that will be paid out
+</ResponseField>
+
 <ResponseField name="currency" type="string" required>
   Currency
 </ResponseField>
 
-<ResponseField name="name" type="string" required>
-  Name of the Payment Page
+<ResponseField name="receiptEmail" type="string">
+  Email to receive transaction receipt. If no value is specified, the customer email will get transaction receipt
 </ResponseField>
 
-<ResponseField name="description" type="string">
-  Description of the Payment Page
+<ResponseField name="customerEmail" type="string" required>
+  Email of the customer
 </ResponseField>
 
-<ResponseField name="slug" type="string" required>
-  Payment Page Slug
+<ResponseField name="country" type="string">
+  Country of the Payment Intent
 </ResponseField>
 
-<ResponseField name="pageLink" type="string" required>
-  Payment Page link.
+<ResponseField name="status" type="string" required>
+  Payment Intent status
+</ResponseField>
+
+<ResponseField name="checkoutLink" type="string" required>
+  Payment Intent link.
+</ResponseField>
+
+<ResponseField name="clientReference" type="string" required>
+  Payment Intent unique reference supplied by the client.
 </ResponseField>
 
 <ResponseField name="paymentMethods" type="array">
@@ -62,6 +74,10 @@ openapi: 'UPDATE /v2/payment-pages/{id}'
 
 <ResponseField name="callbackUrl" type="string">
   Callback URL
+</ResponseField>
+
+<ResponseField name="transaction" type="string">
+  Transaction reference associated with the Payment Intent
 </ResponseField>
 
 <ResponseField name="meta" type="array">
@@ -99,14 +115,6 @@ openapi: 'UPDATE /v2/payment-pages/{id}'
     </ResponseField>
 
   </Expandable>
-</ResponseField>
-
-<ResponseField name="activeAt" type="datetime">
-  Payment Page active date.
-</ResponseField>
-
-<ResponseField name="expiresAt" type="datetime">
-  Payment Page expiry date.
 </ResponseField>
 
 <ResponseField name="createdAt" type="datetime" required>

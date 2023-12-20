@@ -2,3 +2,115 @@
 title: 'Get all Payment Pages'
 openapi: 'GET /v2/payment-pages'
 ---
+
+## Response Data
+
+<ResponseField name="paymentPages" type="array">
+    <Expandable title="items">
+        <ResponseField name="id" type="string" required>
+          The ID of the Payment Page
+        </ResponseField>
+
+        <ResponseField name="amount" type="string" required>
+          Amount
+        </ResponseField>
+
+        <ResponseField name="currency" type="string" required>
+          Currency
+        </ResponseField>
+
+        <ResponseField name="name" type="string" required>
+          Name of the Payment Page
+        </ResponseField>
+
+        <ResponseField name="description" type="string">
+          Description of the Payment Page
+        </ResponseField>
+
+        <ResponseField name="slug" type="string" required>
+          Payment Page Slug
+        </ResponseField>
+
+        <ResponseField name="pageLink" type="string" required>
+          Payment Page link.
+        </ResponseField>
+
+        <ResponseField name="paymentMethods" type="array">
+          <Expandable title="properties">
+            <ResponseField name="id" type="string">
+              ID of the payment method
+            </ResponseField>
+
+            <ResponseField name="type" type="string">
+              Type of the payment method
+            </ResponseField>
+
+            <ResponseField name="attributes" type="array">
+                <Expandable title="properties" type="array">
+                    <ResponseField name="name" type="string">
+                      Name of the payment method
+                    </ResponseField>
+                </Expandable>
+            </ResponseField>
+
+          </Expandable>
+        </ResponseField>
+
+        <ResponseField name="callbackUrl" type="string">
+          Callback URL
+        </ResponseField>
+
+        <ResponseField name="meta" type="array">
+          More information about the payment page
+        </ResponseField>
+
+        <ResponseField name="settlementAccount" type="Settlement Account Object">
+          <Expandable title="properties">
+            <ResponseField name="id" type="string">
+              ID of the Settlement Account
+            </ResponseField>
+
+            <ResponseField name="accountName" type="string">
+              Settlement Account Name
+            </ResponseField>
+
+            <ResponseField name="accountNumber" type="string">
+               Settlement Account Number
+            </ResponseField>
+
+            <ResponseField name="bankName" type="string">
+               Settlement Account Bank
+            </ResponseField>
+
+            <ResponseField name="bankCode" type="string">
+               Settlement Account Bank Code
+            </ResponseField>
+
+            <ResponseField name="createdAt" type="datetime">
+                Created Date
+            </ResponseField>
+
+            <ResponseField name="updatedAt" type="datetime">
+                Updated Date
+            </ResponseField>
+
+          </Expandable>
+        </ResponseField>
+
+        <ResponseField name="activeAt" type="datetime">
+          Payment Page active date.
+        </ResponseField>
+
+        <ResponseField name="expiresAt" type="datetime">
+          Payment Page expiry date.
+        </ResponseField>
+
+        <ResponseField name="createdAt" type="datetime" required>
+          Payment Page created time.
+        </ResponseField>
+
+        <ResponseField name="updatedAt" type="datetime" required>
+          Payment Page updated time.
+        </ResponseField>
+    </Expandable>
+</ResponseField>

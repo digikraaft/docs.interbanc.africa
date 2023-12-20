@@ -2,3 +2,154 @@
 title: 'Create new Payment Intent'
 api: 'POST /v2/payment-intent'
 ---
+
+## Request Body Parameters
+
+<ParamField body="amount" type="integer" placeholder="10000" required>
+  The Payment Intent amount.
+</ParamField>
+
+<ParamField body="customerEmail" type="string" required placeholder="customer@mail.com">
+  Email of the customer.
+</ParamField>
+
+<ParamField body="currency" type="string" default="NGN" required placeholder="NGN">
+  The currency of the amount. The only currency currently supported is NGN.
+</ParamField>
+
+<ParamField body="clientReference" type="string" required>
+  A unique reference from your app.
+</ParamField>
+
+<ParamField body="receiptEmail" type="string" required placeholder="customer@mail.com">
+  Email to send receipt of the transaction to.
+</ParamField>
+
+<ParamField body="paymentMethod" type="array">
+  The allowed payment methods to be used for payment. Possible values include: Flutterwave.
+</ParamField>
+
+<ParamField body="callbackUrl" type="string">
+  The URL to redirect user to after a payment attempt.
+</ParamField>
+
+<ParamField body="settlementAccountId" type="string">
+  The Settlement Account ID that payments received should go into. If no value is specified, the default business settlement account is used.
+</ParamField>
+
+
+## Response Data
+
+<ResponseField name="id" type="string" required>
+  The ID of the Payment Page
+</ResponseField>
+
+<ResponseField name="amount" type="string" required>
+  Amount
+</ResponseField>
+
+<ResponseField name="totalAmount" type="string" required>
+  Total Amount that will be paid out
+</ResponseField>
+
+<ResponseField name="currency" type="string" required>
+  Currency
+</ResponseField>
+
+<ResponseField name="receiptEmail" type="string">
+  Email to receive transaction receipt. If no value is specified, the customer email will get transaction receipt
+</ResponseField>
+
+<ResponseField name="customerEmail" type="string" required>
+  Email of the customer
+</ResponseField>
+
+<ResponseField name="country" type="string">
+  Country of the Payment Intent
+</ResponseField>
+
+<ResponseField name="status" type="string" required>
+  Payment Intent status
+</ResponseField>
+
+<ResponseField name="checkoutLink" type="string" required>
+  Payment Intent link.
+</ResponseField>
+
+<ResponseField name="clientReference" type="string" required>
+  Payment Intent unique reference supplied by the client.
+</ResponseField>
+
+<ResponseField name="paymentMethods" type="array">
+  <Expandable title="properties">
+    <ResponseField name="id" type="string">
+      ID of the payment method
+    </ResponseField>
+
+    <ResponseField name="type" type="string">
+      Type of the payment method
+    </ResponseField>
+
+    <ResponseField name="attributes" type="array">
+        <Expandable title="properties" type="array">
+            <ResponseField name="name" type="string">
+              Name of the payment method
+            </ResponseField>
+        </Expandable>
+    </ResponseField>
+
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="callbackUrl" type="string">
+  Callback URL
+</ResponseField>
+
+<ResponseField name="transaction" type="string">
+  Transaction reference associated with the Payment Intent
+</ResponseField>
+
+<ResponseField name="meta" type="array">
+  More information about the payment page
+</ResponseField>
+
+<ResponseField name="settlementAccount" type="Settlement Account Object">
+  <Expandable title="properties">
+    <ResponseField name="id" type="string">
+      ID of the Settlement Account
+    </ResponseField>
+
+    <ResponseField name="accountName" type="string">
+      Settlement Account Name
+    </ResponseField>
+
+    <ResponseField name="accountNumber" type="string">
+       Settlement Account Number
+    </ResponseField>
+
+    <ResponseField name="bankName" type="string">
+       Settlement Account Bank
+    </ResponseField>
+
+    <ResponseField name="bankCode" type="string">
+       Settlement Account Bank Code
+    </ResponseField>
+
+    <ResponseField name="createdAt" type="datetime">
+        Created Date
+    </ResponseField>
+
+    <ResponseField name="updatedAt" type="datetime">
+        Updated Date
+    </ResponseField>
+
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="createdAt" type="datetime" required>
+  Payment Page created time.
+</ResponseField>
+
+<ResponseField name="updatedAt" type="datetime" required>
+  Payment Page updated time.
+</ResponseField>

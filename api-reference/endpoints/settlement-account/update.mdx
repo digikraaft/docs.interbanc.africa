@@ -1,0 +1,58 @@
+---
+title: 'Update Settlement Account'
+api: 'PUT /v2/settlement-accounts/{id}'
+---
+## Request Path Parameters
+
+<ParamField path="reference" type="string" placeholder="sa_Nfr6HyIxpiIDYclTBoUDRK3I">
+  The ID of the Settlement Account.
+</ParamField>
+
+## Request Body Parameters
+
+<ParamField body="accountName" type="string" placeholder="John Doe" required>
+    Account Name.
+</ParamField>
+
+<ParamField body="accountNumber" type="string" placeholder="0123456789" required>
+    Account Number.
+</ParamField>
+
+<ParamField body="bankCode" type="string" placeholder="012" required>
+    Bank Code. To get this code, call the bank list endpoint.
+</ParamField>
+
+<ParamField body="bankName" type="string" placeholder="Stanbic" required>
+    Bank Name.
+</ParamField>
+
+
+## Response Data
+
+<ResponseField name="id" type="string" required>
+    The Settlement Account ID
+</ResponseField>
+
+<ResponseField name="accountName" type="string" required>
+    Settlement Account Name
+</ResponseField>
+
+<ResponseField name="accountNumber" type="string" required>
+    Settlement Account Number
+</ResponseField>
+
+<ResponseField name="bankName" type="string" required>
+    Settlement Account Bank
+</ResponseField>
+
+<ResponseField name="bankCode" type="string" required>
+    Settlement Account Bank Code
+</ResponseField>
+
+<ResponseField name="createdAt" type="datetime">
+    Created Date
+</ResponseField>
+
+<ResponseField name="updatedAt" type="datetime">
+    Updated Date
+</ResponseField>

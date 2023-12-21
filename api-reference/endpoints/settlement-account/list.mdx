@@ -1,0 +1,38 @@
+---
+title: 'Get all Settlement Accounts'
+api: 'GET /v2/settlement-accounts'
+---
+
+## Response Data
+
+<ResponseField name="settlementAccounts" type="array">
+    <Expandable title="items">
+        <ResponseField name="id" type="string" required>
+            The Settlement Account ID
+        </ResponseField>
+
+        <ResponseField name="accountName" type="string" required>
+            Settlement Account Name
+        </ResponseField>
+
+        <ResponseField name="accountNumber" type="string" required>
+            Settlement Account Number
+        </ResponseField>
+
+        <ResponseField name="bankName" type="string" required>
+            Settlement Account Bank
+        </ResponseField>
+
+        <ResponseField name="bankCode" type="string" required>
+            Settlement Account Bank Code
+        </ResponseField>
+
+        <ResponseField name="createdAt" type="datetime">
+            Created Date
+        </ResponseField>
+
+        <ResponseField name="updatedAt" type="datetime">
+            Updated Date
+        </ResponseField>
+    </Expandable>
+</ResponseField>

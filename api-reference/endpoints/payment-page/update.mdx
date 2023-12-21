@@ -2,12 +2,13 @@
 title: 'Update Payment Page'
 api: 'PUT /v2/payment-pages/{id}'
 ---
-## Request Body Parameters
+## Request Path Parameters
 
-<ParamField path="id" type="string" placeholder="pg_test_page_id">
+<ParamField path="reference" type="string" placeholder="pg_test_page_id">
   The ID of the Payment Page.
 </ParamField>
 
+## Request Body Parameters
 <ParamField body="name" type="string" placeholder="Test Page">
     The name of the Payment Page.
 </ParamField>

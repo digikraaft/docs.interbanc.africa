@@ -3,12 +3,13 @@ title: 'Update Payment Intent'
 api: 'PUT /v2/payment-intents/{id}'
 ---
 
-## Request Body Parameters
+## Request Path Parameters
 
-<ParamField path="id" type="string" placeholder="pi_aedf123ddslflgnalkihb">
+<ParamField path="reference" type="string" placeholder="pi_aedf123ddslflgnalkihb">
   The ID of the Payment Intent.
 </ParamField>
 
+## Request Body Parameters
 <ParamField body="amount" type="integer" placeholder="10000">
     The Payment Intent amount.
 </ParamField>

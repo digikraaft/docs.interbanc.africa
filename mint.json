@@ -55,6 +55,17 @@
       "group": "Endpoints",
       "pages": [
         {
+          "group": "Settlement Account",
+          "pages": [
+            "api-reference/endpoints/settlement-account/create",
+            "api-reference/endpoints/settlement-account/get",
+            "api-reference/endpoints/settlement-account/list",
+            "api-reference/endpoints/settlement-account/verify",
+            "api-reference/endpoints/settlement-account/update",
+            "api-reference/endpoints/settlement-account/delete"
+          ]
+        },
+        {
           "group": "Payment Pages",
           "pages": [
             "api-reference/endpoints/payment-page/create",

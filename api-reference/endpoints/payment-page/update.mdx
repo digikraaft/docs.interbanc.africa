@@ -8,6 +8,46 @@ api: 'PUT /v2/payment-pages/{id}'
   The ID of the Payment Page.
 </ParamField>
 
+<ParamField body="name" type="string" placeholder="Test Page" required>
+    The name of the Payment Page.
+</ParamField>
+
+<ParamField body="amount" type="integer" required placeholder="10000">
+    Amount to charge customer.
+</ParamField>
+
+<ParamField body="currency" type="string" default="NGN" required placeholder="NGN">
+    The currency of the amount. The only currency currently supported is NGN.
+</ParamField>
+
+<ParamField body="slug" type="string">
+    The preferred page URL. If none is provided, it generates a slug based on the name.
+</ParamField>
+
+<ParamField body="paymentMethod" type="array">
+    The allowed payment methods to be used for payment. Possible values include: Flutterwave.
+</ParamField>
+
+<ParamField body="callbackUrl" type="string">
+    The URL to redirect user to after a payment attempt.
+</ParamField>
+
+<ParamField body="activeAt" type="datetime">
+    The date and time the payment page should become active. If not provided, the payment page is immediately active.
+</ParamField>
+
+<ParamField body="expiresAt" type="datetime">
+    The date and time the payment page should expire. If not provided, the payment page will never expire.
+</ParamField>
+
+<ParamField body="settlementAccountId" type="string">
+    The Settlement Account ID that payments received should go into. If no value is specified, the default business settlement account is used.
+</ParamField>
+
+<ParamField body="additionalFields" type="array">
+    If you want users to provide additional information before making payment, specify them here. If none is specified, the defaults (First name, Last name, Email, Phone number) are used.
+</ParamField>
+
 
 ## Response Data
 

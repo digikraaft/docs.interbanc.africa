@@ -9,6 +9,38 @@ api: 'PUT /v2/payment-intents/{id}'
   The ID of the Payment Intent.
 </ParamField>
 
+<ParamField body="amount" type="integer" placeholder="10000" required>
+    The Payment Intent amount.
+</ParamField>
+
+<ParamField body="customerEmail" type="string" required placeholder="customer@mail.com">
+    Email of the customer.
+</ParamField>
+
+<ParamField body="currency" type="string" default="NGN" required placeholder="NGN">
+    The currency of the amount. The only currency currently supported is NGN.
+</ParamField>
+
+<ParamField body="clientReference" type="string" required>
+    A unique reference from your app.
+</ParamField>
+
+<ParamField body="receiptEmail" type="string" required placeholder="customer@mail.com">
+    Email to send receipt of the transaction to.
+</ParamField>
+
+<ParamField body="paymentMethod" type="array">
+    The allowed payment methods to be used for payment. Possible values include: Flutterwave.
+</ParamField>
+
+<ParamField body="callbackUrl" type="string">
+    The URL to redirect user to after a payment attempt.
+</ParamField>
+
+<ParamField body="settlementAccountId" type="string">
+    The Settlement Account ID that payments received should go into. If no value is specified, the default business settlement account is used.
+</ParamField>
+
 ## Response Data
 
 <ResponseField name="id" type="string" required>

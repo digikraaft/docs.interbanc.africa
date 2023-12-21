@@ -55,6 +55,12 @@
       "group": "Endpoints",
       "pages": [
         {
+          "group": "Bank",
+          "pages": [
+            "api-reference/endpoints/bank/list",
+          ]
+        },
+        {
           "group": "Settlement Account",
           "pages": [
             "api-reference/endpoints/settlement-account/create",

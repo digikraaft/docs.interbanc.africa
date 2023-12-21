@@ -1,0 +1,31 @@
+---
+title: 'Get All Banks'
+api: 'GET /v2/banks'
+---
+
+
+## Response Data
+
+<ResponseField name="banks" type="array">
+    <Expandable title="items">
+        <ResponseField name="id" type="string" required>
+          Bank ID
+        </ResponseField>
+
+        <ResponseField name="bankName" type="string" required>
+          Bank Name
+        </ResponseField>
+
+        <ResponseField name="bankCode" type="string" required>
+          Bank Code
+        </ResponseField>
+
+        <ResponseField name="createdAt" type="datetime" required>
+          Payment Page created time.
+        </ResponseField>
+
+        <ResponseField name="updatedAt" type="datetime" required>
+          Payment Page updated time.
+        </ResponseField>
+    </Expandable>
+</ResponseField>

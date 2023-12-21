@@ -17,7 +17,7 @@ The body parameter can be either of the following:
 
 ## Response Data
 
-<ResponseField name="status" type="int" required>
+<ResponseField name="status" type="string" required>
   The status of the response
 </ResponseField>
 
@@ -30,7 +30,7 @@ The body parameter can be either of the following:
     <ResponseField name="status" type="int" required>
       The status of the payment Intent. This is the status to checkout for. Possible values include: initiated, processing, requires_payment_method, succeeded, canceled, failed
     </ResponseField>
-    <ResponseField name="detail" type="int" required>
+    <ResponseField name="detail" type="string" required>
        Detailed description of the Payment Intent status
     </ResponseField>
     <ResponseField name="clientReference" type="string" required>

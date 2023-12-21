@@ -57,7 +57,7 @@
         {
           "group": "Bank",
           "pages": [
-            "api-reference/endpoints/bank/list",
+            "api-reference/endpoints/bank/list"
           ]
         },
         {

@@ -4,19 +4,19 @@ api: 'PUT /v2/payment-pages/{id}'
 ---
 ## Request Body Parameters
 
-<ParamField path="id" type="string" placeholder="pg_test_page_id" required>
+<ParamField path="id" type="string" placeholder="pg_test_page_id">
   The ID of the Payment Page.
 </ParamField>
 
-<ParamField body="name" type="string" placeholder="Test Page" required>
+<ParamField body="name" type="string" placeholder="Test Page">
     The name of the Payment Page.
 </ParamField>
 
-<ParamField body="amount" type="integer" required placeholder="10000">
+<ParamField body="amount" type="integer" placeholder="10000">
     Amount to charge customer.
 </ParamField>
 
-<ParamField body="currency" type="string" default="NGN" required placeholder="NGN">
+<ParamField body="currency" type="string" default="NGN" placeholder="NGN">
     The currency of the amount. The only currency currently supported is NGN.
 </ParamField>
 

@@ -5,27 +5,27 @@ api: 'PUT /v2/payment-intents/{id}'
 
 ## Request Body Parameters
 
-<ParamField path="id" type="string" placeholder="pi_aedf123ddslflgnalkihb" required>
+<ParamField path="id" type="string" placeholder="pi_aedf123ddslflgnalkihb">
   The ID of the Payment Intent.
 </ParamField>
 
-<ParamField body="amount" type="integer" placeholder="10000" required>
+<ParamField body="amount" type="integer" placeholder="10000">
     The Payment Intent amount.
 </ParamField>
 
-<ParamField body="customerEmail" type="string" required placeholder="customer@mail.com">
+<ParamField body="customerEmail" type="string" placeholder="customer@mail.com">
     Email of the customer.
 </ParamField>
 
-<ParamField body="currency" type="string" default="NGN" required placeholder="NGN">
+<ParamField body="currency" type="string" default="NGN" placeholder="NGN">
     The currency of the amount. The only currency currently supported is NGN.
 </ParamField>
 
-<ParamField body="clientReference" type="string" required>
+<ParamField body="clientReference" type="string">
     A unique reference from your app.
 </ParamField>
 
-<ParamField body="receiptEmail" type="string" required placeholder="customer@mail.com">
+<ParamField body="receiptEmail" type="string" placeholder="customer@mail.com">
     Email to send receipt of the transaction to.
 </ParamField>
 

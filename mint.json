@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "Interbanc Documentation",
   "logo": {
     "dark": "/logo/interbancLogo-Light.png",
     "light": "/logo/interbancLogo-Dark.png"

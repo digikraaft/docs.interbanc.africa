@@ -10,7 +10,7 @@
   },
   "servers": [
     {
-      "url": "https://dev.pay.interbanc.africa/api/v2"
+      "url": "https://staging.pay.interbanc.africa/api/v2"
     }
   ],
   "security": [

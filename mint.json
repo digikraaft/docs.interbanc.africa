@@ -101,7 +101,7 @@
     "linkedin": "https://www.linkedin.com/company/digikraaft"
   },
   "api": {
-    "baseUrl": "https://dev.pay.interbanc.africa/api",
+    "baseUrl": "https://staging.pay.interbanc.africa/api",
     "auth": {
       "method": "bearer"
     }

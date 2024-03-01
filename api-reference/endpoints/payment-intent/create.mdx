@@ -33,7 +33,7 @@ api: 'POST /v2/payment-intents'
   The URL to redirect user to after a payment attempt.
 </ParamField>
 
-<ParamField body="settlementAccountIds" type="array">
+<ParamField body="settlementAccounts" type="array">
   The Settlement Account IDs that payments received should go into. Multiple settlement account ids can be added alongside the amount to be settled. The key for each array index should be: settlementAccountId (for the subaccount id) and splitAmount (for the amount)
 </ParamField>
 

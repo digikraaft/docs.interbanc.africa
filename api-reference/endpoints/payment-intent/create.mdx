@@ -33,8 +33,8 @@ api: 'POST /v2/payment-intents'
   The URL to redirect user to after a payment attempt.
 </ParamField>
 
-<ParamField body="settlementAccountId" type="string">
-  The Settlement Account ID that payments received should go into. If no value is specified, the default business settlement account is used.
+<ParamField body="settlementAccountIds" type="array">
+  The Settlement Account IDs that payments received should go into. Multiple settlement account ids can be added alongside the amount to be settled. The key for each array index should be: settlementAccountId (for the subaccount id) and splitAmount (for the amount)
 </ParamField>
 
 

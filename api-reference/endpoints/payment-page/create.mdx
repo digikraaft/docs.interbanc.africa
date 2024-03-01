@@ -105,37 +105,17 @@ api: 'POST /v2/payment-pages'
   More information about the payment page
 </ResponseField>
 
-<ResponseField name="settlementAccount" type="Settlement Account Object">
-  <Expandable title="properties">
-    <ResponseField name="id" type="string">
-      ID of the Settlement Account
-    </ResponseField>
+<ResponseField name="settlementAccounts" type="array">
+    <Expandable title="properties">
+        <ResponseField name="settlementAccountId" type="string">
+            ID of the Settlement Account
+        </ResponseField>
 
-    <ResponseField name="accountName" type="string">
-      Settlement Account Name
-    </ResponseField>
+        <ResponseField name="splitAmount" type="string">
+            Amount settled to the Settlement Account
+        </ResponseField>
 
-    <ResponseField name="accountNumber" type="string">
-       Settlement Account Number
-    </ResponseField>
-
-    <ResponseField name="bankName" type="string">
-       Settlement Account Bank
-    </ResponseField>
-
-    <ResponseField name="bankCode" type="string">
-       Settlement Account Bank Code
-    </ResponseField>
-
-    <ResponseField name="createdAt" type="datetime">
-        Created Date
-    </ResponseField>
-
-    <ResponseField name="updatedAt" type="datetime">
-        Updated Date
-    </ResponseField>
-
-  </Expandable>
+    </Expandable>
 </ResponseField>
 
 <ResponseField name="activeAt" type="datetime">
